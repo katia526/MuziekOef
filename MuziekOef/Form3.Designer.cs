@@ -42,6 +42,7 @@ namespace MuziekOef
             this.txtArtiest.Name = "txtArtiest";
             this.txtArtiest.Size = new System.Drawing.Size(100, 20);
             this.txtArtiest.TabIndex = 0;
+            this.txtArtiest.TextChanged += new System.EventHandler(this.txtArtiest_TextChanged);
             // 
             // btnBewaar
             // 

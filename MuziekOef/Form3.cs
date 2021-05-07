@@ -63,13 +63,19 @@ namespace MuziekOef
             using (MuziekContext ctx = new MuziekContext())
             {
 
-                var collection = ctx.Artists.Select(c => new { Id = c.ArtistId, Name = c.Name }).ToList();
+               
+              var collection = ctx.Artists.Select(c => new { Id = c.ArtistId, Name = c.Name }).ToList();
                 lstArtiest.DataSource = collection;
                 lstArtiest.DisplayMember = "Name";
                 lstArtiest.ValueMember = "Id";
                
             }
                
+        }
+
+        private void txtArtiest_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

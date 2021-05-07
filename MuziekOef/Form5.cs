@@ -13,9 +13,10 @@ namespace MuziekOef
 {
     public partial class Form5 : Form
     {
-        public Form5()
+        public Form5(string Klant, int klantId)
         {
             InitializeComponent();
+            txtKlant.Text = Klant;
         }
 
         private void Form5_Load(object sender, EventArgs e)
@@ -72,12 +73,17 @@ namespace MuziekOef
 
             using (MuziekContext ctx = new MuziekContext())
             {
+                //var test = ctx.Albums.Where(a => a.A_ArtistId == cbArtiest.SelectedIndex);
 
+                //foreach (var item in test)
+                //{
+                //    cbAlbum.DisplayMember = item.Name;
+                //    cbAlbum.SelectedValue = item.AlbumId;
+                //}
+                //var art = Convert.ToInt32(cbArtiest.SelectedValue);
 
-               //var art = Convert.ToInt32(cbArtiest.SelectedValue);
-
-                //var collect = ctx.Albums.Where(s => s.A_ArtistId = cbArtiest.SelectedValue)
-               //  .Select(c => new { Id = c.AlbumId, IdA = c.A_ArtistId, Name = c.Name }).ToList();
+                //var collect = ctx.Albums.Where(s => s.A_ArtistId = cbArtiest.SelectedIndex)
+                //.Select(c => new { Id = c.AlbumId, IdA = c.A_ArtistId, Name = c.Name }).ToList();
 
                 var collect = ctx.Albums.Select(c => new { Id = c.AlbumId, IdA = c.A_ArtistId, Name = c.Name }).ToList();
 

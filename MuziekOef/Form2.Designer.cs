@@ -45,6 +45,7 @@ namespace MuziekOef
             this.btnMaakLijst.TabIndex = 0;
             this.btnMaakLijst.Text = "Maak PlayList";
             this.btnMaakLijst.UseVisualStyleBackColor = true;
+            this.btnMaakLijst.Click += new System.EventHandler(this.btnMaakLijst_Click);
             // 
             // txtWelkom
             // 

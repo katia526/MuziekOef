@@ -49,12 +49,16 @@ namespace MuziekOef
 
         private void btnSongs_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5(txtWelkom.Text, txtKlantId.Text);
+            var klId = Convert.ToInt32(txtKlantId.Text);
+            Form5 form5 = new Form5(txtWelkom.Text, klId);
             form5.Show();
         }
-        //static void setTextboxText(string klant)
-        //{
-        //    txtWelkom.Text = klant;
-        //}
+
+        private void btnMaakLijst_Click(object sender, EventArgs e)
+        {
+            var klId = Convert.ToInt32(txtKlantId.Text);
+            Form6 form6 = new Form6(txtWelkom.Text, klId);
+            form6.Show();
+        }
     }
 }

@@ -18,65 +18,65 @@ namespace MuziekOef
 
             static void Main()
             {
-                using (MuziekContext ctx = new MuziekContext())
-                {
-                    ctx.Users.Add(new User()
-                    {
-                        FirstName = "Jef",
-                        LastName = "verachtert",
-                        Email = "katia@hotmail.com",
-                        Password = "12ab34CD"
-                    });
+                //using (MuziekContext ctx = new MuziekContext())
+                //{
+                //    ctx.Users.Add(new User()
+                //    {
+                //        FirstName = "Jef",
+                //        LastName = "verachtert",
+                //        Email = "katia@hotmail.com",
+                //        Password = "12ab34CD"
+                //    });
 
-                    ctx.Interactions.Add(new Interaction()
-                    {
-                        I_UserId = 1,
-                        I_SongId = 1,
-                        Liked = 1,
-                        PlayCount = 1,
-                        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
-                        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
-                    });
+                //    ctx.Interactions.Add(new Interaction()
+                //    {
+                //        I_UserId = 1,
+                //        I_SongId = 1,
+                //        Liked = 1,
+                //        PlayCount = 1,
+                //        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
+                //        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
+                //    });
 
-                    ctx.Playlists.Add(new Playlist()
-                    {
-                        P_UserId = 1,
-                        Name = "Eerste",
-                        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
-                        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
-                    });
+                //    ctx.Playlists.Add(new Playlist()
+                //    {
+                //        P_UserId = 1,
+                //        Name = "Eerste",
+                //        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
+                //        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
+                //    });
 
-                    ctx.Songs.Add(new Song()
-                    {
-                        S_AlbumId = 1,
-                        S_ArtistId = 1,
-                        Title = "Reckless",
-                        Length = 3.02,
-                        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
-                        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
-                    });
-                    ctx.Albums.Add(new Album()
-                    {
-                        A_ArtistId = 1,
-                        Name = "Eerste Album",
-                        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
-                        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
-                    });
-                    //ctx.PlaylistSongs.Add(new PlaylistSong()
-                    //{
-                    //    Pl_PlaylistId = 1,
-                    //    Pl_SongId = 1
-                    //});
-                    ctx.Artists.Add(new Artist()
-                    {
+                //    ctx.Songs.Add(new Song()
+                //    {
+                //        S_AlbumId = 1,
+                //        S_ArtistId = 1,
+                //        Title = "Reckless",
+                //        Length = 3.02,
+                //        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
+                //        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
+                //    });
+                //    ctx.Albums.Add(new Album()
+                //    {
+                //        A_ArtistId = 1,
+                //        Name = "Eerste Album",
+                //        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
+                //        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
+                //    });
+                //    //ctx.PlaylistSongs.Add(new PlaylistSong()
+                //    //{
+                //    //    Pl_PlaylistId = 1,
+                //    //    Pl_SongId = 1
+                //    //});
+                //    ctx.Artists.Add(new Artist()
+                //    {
 
-                        Name = "Bryan Adams",
-                        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
-                        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
-                    });
-                    ctx.SaveChanges();
+                //        Name = "Bryan Adams",
+                //        CreatedAt = new DateTime(year: 2021, month: 5, day: 03),
+                //        UpdatedAt = new DateTime(year: 2021, month: 5, day: 03)
+                //    });
+                //    ctx.SaveChanges();
 
-                }
+                //}
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Form1());
@@ -100,7 +100,7 @@ namespace MuziekOef
             public int P_UserId { get; set; }
             public string Name { get; set; }
             [DataType(DataType.Date)]
-            public DateTime CreatedAt { get; set; }
+            public DateTime CreatedAt { get; set; } = DateTime.Now;
             [DataType(DataType.Date)]
             public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
@@ -186,9 +186,9 @@ namespace MuziekOef
         {
             public MuziekContext() : base("name=MuziekDBConnectString")
             {
-                 Database.SetInitializer(new CreateDatabaseIfNotExists<MuziekContext>());
-                //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MuziekContext>());
-               // Database.SetInitializer(new DropCreateDatabaseAlways<MuziekContext>());
+                // Database.SetInitializer(new CreateDatabaseIfNotExists<MuziekContext>());
+                Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MuziekContext>());
+                //Database.SetInitializer(new DropCreateDatabaseAlways<MuziekContext>());
             }
 
             public DbSet<User> Users { get; set; }

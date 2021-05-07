@@ -38,6 +38,7 @@ namespace MuziekOef
             this.btnBewaar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLengte = new System.Windows.Forms.TextBox();
+            this.txtKlant = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbArtiest
@@ -117,11 +118,19 @@ namespace MuziekOef
             this.txtLengte.Size = new System.Drawing.Size(100, 20);
             this.txtLengte.TabIndex = 8;
             // 
+            // txtKlant
+            // 
+            this.txtKlant.Location = new System.Drawing.Point(637, 12);
+            this.txtKlant.Name = "txtKlant";
+            this.txtKlant.Size = new System.Drawing.Size(100, 20);
+            this.txtKlant.TabIndex = 9;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtKlant);
             this.Controls.Add(this.txtLengte);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBewaar);
@@ -150,5 +159,6 @@ namespace MuziekOef
         private System.Windows.Forms.Button btnBewaar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLengte;
+        private System.Windows.Forms.TextBox txtKlant;
     }
 }
